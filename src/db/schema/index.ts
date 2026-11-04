@@ -1,3 +1,4 @@
-export * from './app.js';
-export * from './schema.js';
+export * from './app';
+export * from './auth';
+
 
