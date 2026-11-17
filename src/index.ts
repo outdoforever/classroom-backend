@@ -1,5 +1,10 @@
+import AgentAPI from "apminsight";
+AgentAPI.config()
+
 import express from "express";
 import cors from "cors";
+import { toNodeHandler } from "better-auth/node";
+import { auth } from "./lib/auth.js";
 
 import subjectsRouter from "./routes/subjects";
 import securityMiddleware from "./middleware/security";
@@ -8,13 +13,15 @@ const app = express();
 const PORT = 8000;
 
 
-if(!process.env.FRONTEND_URL) throw new Error('Frontend_URL is not set in .env file');
+if (!process.env.FRONTEND_URL) throw new Error('Frontend_URL is not set in .env file');
 
 app.use(cors({
     origin: process.env.FRONTEND_URL,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }))
+
+app.all('/api/auth/*splat', toNodeHandler(auth));
 
 app.use(express.json());
 
