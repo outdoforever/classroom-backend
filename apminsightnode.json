@@ -1,1 +1,5 @@
-{"licenseKey":"UYngjGSJR4ltoTQ+jQ/E7nXVDGNu1z/8jYslyjSDGTlx9XiB858qm5el1ahTJtvl","appName":"classroom-backend","port":10000}
+{
+    "licenseKey": "UYngjGSJR4ltoTQ+jQ/E7nXVDGNu1z/8jYslyjSDGTlx9XiB858qm5el1ahTJtvl",
+    "appName": "classroom-backend",
+    "port": 10000
+}
